@@ -1,0 +1,114 @@
+Date:29/Sep/2022
+----------------
+Spring Boot Module
+------------------
+- It is a Spring Module which provides Rapid Application Development (RAD) feature
+  to Spring framework
+- It is used to avoid writing spring bean xml configuration file
+- Automatically configure spring by adding the project dependencies in pom.xml file
+- Embedded tomcat server
+
+Spring Boot IDE (STS - Spring Tool Suite)
+-----------------------------------------
+Google: sts download
+url: https://spring.io/tools
+
+Project Lombok tool
+-------------------
+Project lombok is a Java Library Tool that is used to minimize the boiler plate
+code and save the time of developers during development just by using some annotations
+
+	Ex:
+		@NoArgsConstructor
+		@AllArgsConstructor
+		@Setter
+		@Getter
+		@ToString
+		@Data //@Setter, @Getter and @ToString
+		public class Employee
+		{
+			private int empId;
+			private String empName;
+			private int empSalary;
+		}
+
+Download Lombok
+---------------
+url: https://projectlombok.org/download
+
+Developing a Spring Boot Application in STS
+-------------------------------------------
+- Create a table "Product" in MySQL
+	mysql>create table Product (pid int(3), pname varchar(10), price int(4));
+
+- Create a Spring Starter Project in STS
+	Click on File -> New -> Spring Starter Project
+
+		Name : SpringBootProj
+		Java Version : 8
+		Group : springboot
+		Artifact : SpringBootProj
+		Package : com.spring.boot
+
+		Click Next
+
+		In available search for the following project dependencies and add
+			- Spring Web
+			- JDBC API
+			- MySQL Driver
+			- Lombok
+
+		and click Finish
+
+- Add the following dependency in pom.xml file
+		<dependency>
+    		<groupId>org.apache.tomcat</groupId>
+    		<artifactId>tomcat-jasper</artifactId>
+    		<version>9.0.50</version>
+		</dependency>
+
+			Refer program pom.xml
+
+- Create a JavaBean class "Product" in com.spring.boot package of src/main/java folder
+  of SpringBootProj
+		REfer program Product.java
+
+- Create a folder "webapp" in src/main folder
+
+- Create a welcome page "product.jsp" in webapp folder
+		Refer program product.jsp
+
+- Create a Controller class "ProductController" in com.spring.boot package
+		Refer program ProductController.java
+
+- Create a Service class "ProductService" in com.spring.boot package
+		Refer program ProductService.java
+
+- Create a view page "successsProduct.jsp" in webapp folder
+		REfer program successProduct.jsp
+
+- Update application.properties file of src/main/resources folder
+		Refer program application.properties
+
+- Run the project as Spring Boot App
+	Right click on SpringBootProj -> Run As -> Spring Boot App
+
+- Open browser and type the following url
+		http://localhost:8080/product.jsp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
