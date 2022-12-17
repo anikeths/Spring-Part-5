@@ -1,0 +1,103 @@
+Date:30/Sep/2022
+----------------
+Spring REST Module
+------------------
+Spring REST Module is used to create REST APIs
+
+REST APIs are used to develop distributed applications which are used to interact
+one application with another application
+
+Spring Boot REST CRUD Application with POSTMAN Client
+-----------------------------------------------------
+Refer document Spring Boot REST CRUD Application with POSTMAN.docx
+
+Refer source codes in SpringBootRESTCRUDProj.ZIP
+
+Spring Data JPA Module (Java Persistence API)
+----------------------
+interface StudentDAO
+{
+   CRUD operations
+}
+public class StudentDAOImpl implements StudentDAO
+{
+  //implement interface methods
+  //overridden CRUD operations
+}
+interface EmployeeDAO
+{
+  CRUD operations
+}
+public class EmployeDAOImpl implements EmployeeDAO
+{
+   ...
+}
+
+20 DAO interfaces => 20 DAO implementation classes
+
+Spring Data JPA (Java Persistence API) 
+---------------
+interface EmployeeDAO extends JPARepository<Employee,Integer>{}
+interface StudentDAO extends JPARespository<Student,Integer>{}
+
+Note: Hibernate is an implementation of JPA 
+
+Spring DATA JPA methods
+------------------------
+- save()
+- deleteById()
+- findById() => primary key
+- findAll()
+
+
+Microservices
+-------------
+- Microservices is used to break up single large monolithic system into multiple
+  independent components
+- In Monolithic application all functionalities are part of single program
+  running in a single environment
+		Refer diagram Monolithic Application.png
+
+- In Microserivices architecture the components are built and deployed independently
+  to integrate into a single larger system
+		Refer diagram Microservice Architecture.png
+
+
+Netflix Eureka Server
+---------------------
+Netflix Eureka Server is used for building the service registry server and 
+Eureka Clients which will register themselves and discover other services
+to call REST APIs
+
+			Refer diagram Eureka Server.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

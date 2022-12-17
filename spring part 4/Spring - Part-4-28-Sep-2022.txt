@@ -1,0 +1,155 @@
+Date:28/Sep/2022
+----------------
+Spring MVC Module
+-----------------
+- Spring MVC Module is used to develop dynamic web applications
+- MVC stands for Model View and Controller
+- MVC Architecture is used to make the Model independent of View
+
+		Refer diagram MVC.png
+
+- The front end controller in Spring MVC is "DispatherServlet" which need to be
+  configured in web.xml file
+- DispatcherServlet loads the Spring bean XML configuration file
+- In Spring bean XML configuration file we configure the Controller classes
+- Controller class will invoke the Model and Model will return the result back to the
+  Controller and based on the result value, Controller will invoke the respective View pages
+
+Spring MVC Annotations
+----------------------
+@Controller
+-----------
+used to mark the class as the controller class
+		Ex:
+			@Controller
+			public class LoginController
+			{}
+
+
+@RequestMapping
+---------------
+used to map the request url.
+
+		Ex:
+			login.html
+			-----------
+			<form action="login">
+				username ...
+				password ...
+				<input type="submit"/>
+			</form>
+
+			@Controller
+			public class LoginController
+			{
+				@RequestMapping("/login")
+				public authenticate()
+				{
+					...
+				}
+			}
+
+Developing a Spring MVC Application in Eclipse using Maven 
+----------------------------------------------------------
+- Configure tomcat server in eclipse workspace
+
+- Create a Maven Project
+			
+	Click on File -> New -> Maven Project
+
+	Click Next
+
+	In Catalog Select : Internal
+	In Artifact Id Select : maven-archetype-webapp
+
+	Click Next
+
+	Group Id : springmvc
+	Artifact Id : SpringMVCProj
+	Package : com.spring.mvc
+
+	and click Finish
+
+	Note
+	----
+	If errors in the project,
+			Right click on SpringMVCProj -> Properties -> Targeted Runtimes ->
+			Make check mark to "Apache Tomcat v9" -> Click Apply and Close
+
+
+- Add the following dependency in pom.xml file of SpringMVCProj
+	
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-jdbc</artifactId>
+    		<version>4.3.10.RELEASE</version>
+		</dependency>
+
+			REfer program pom.xml
+
+- Create a welcome page "login.jsp" in src/main/webapp folder
+		Refer program login.jsp
+
+- Create a folder "java" in src/main folder
+
+- Create a package "com.spring.mvc.controller" in src/main/java folder
+	
+- Create a Controller class "LoginController" in com.spring.mvc.controller package
+		Refer program LoginController.java
+
+- Create a package "com.spring.mvc.model" in src/main/java folder
+		
+- Create a Model class "LoginAction" in com.spring.mvc.model package
+		REfer program LoginAction.java
+
+- Create a view page "success.jsp" in src/main/webapp folder
+		Refer program success.jsp
+
+- Create a view page "failure.jsp" in src/main/webapp folder
+		REfer program failure.jsp
+
+- Update web.xml file by configuring the Spring MVC front end controller "DispatcherServlet"
+		REfer program web.xml
+
+- Create Spring bean XML configuration file "springmvc-servlet.xml" in WEB-INF folder
+		Refer program springmvc-servlet.xml
+
+	Note
+	----
+	The name of the spring bean xml file should be "servlet-name-servlet.xml"
+	where servlet-name is the servlet name given in <servlet-name> element of web.xml file
+
+- Run the application login.jsp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,142 @@
+Date:22/Sep/2022
+----------------
+Spring Framework
+----------------
+Spring Framework is an open source Java platform that provides comprehensive
+infrastructure support for developing robust Java applications very easily and rapidly
+
+Dependency Injection 
+--------------------
+Spring is mostly identified with Dependency Injection which is flavor of
+Inversion of Control (IoC)
+
+Ex:
+		class Employee
+		{}
+		class Department
+		{
+			Employee emp = new Employee();
+		}
+
+		Department dept = new Department();
+
+	In the above code, dept object and emp object are tightly coupled
+
+Ex:
+		class Employee
+		{}
+		class Department
+		{
+			Employee emp;//property
+			Department(Employee emp)//constructor injection
+			{
+				this.emp = emp;
+			}
+			void setEmp(Employee emp)//setter injection
+			{
+				this.emp = emp;
+			}
+		}
+
+		Employee emp = new Employee();
+		Department dept = new Department(emp);
+
+		In the above code, emp object and dept object are loosely coupled
+
+Life cycle of an Object
+-----------------------
+Object Creation -> Object Usage -> Object Destruction
+
+In Java, Object Destruction is taken care by Java as Java is automatic garbage collection
+
+In Spring, the life cycle of an object is taken care by Spring Framework
+
+In Spring the objects are created using spring bean xml configuration file
+
+Spring Modules
+-------------
+- Spring Core/Bean Module
+- Spring DAO Module
+		- Spring JDBC
+		- Spring ORM (Hibernate)
+		- Spring Data JPA(Java Persistence API)
+- Spring MVC Module => used to develop web applications
+- Spring Boot Module
+- Spring REST Module
+
+Developing a Spring Application in Eclipse using Maven
+------------------------------------------------------
+- Create a Maven Project
+	Click on File -> New -> Maven Project
+
+		Click Next
+
+	In Catalog Select : Internal
+	In Artifact Id Select : maven-archetype-quickstart
+
+	Click Next
+
+	Group Id : spring
+	Artifact Id : SpringProj
+	Package : com.spring
+
+	and click Finish
+
+- Add the following dependencies in pom.xml file of SpringProj
+
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-context</artifactId>
+    		<version>4.3.10.RELEASE</version>
+		</dependency>
+
+			REfer program pom.xml
+
+- Create a spring bean class "Book" in com.spring package of src/main/java folder
+  of SpringProj
+		REfer program Book.java
+
+- Create a Spring bean class "Library" in com.spring package
+		Refer program Library.java
+
+- Create Spring bean XML configuration file "library.xml" in src/main/java folder
+		REfer program library.xml
+
+- Create a Test class "LibraryTest" in com.spring package
+		Refer program LibraryTest.java (Run)
+
+Java 8 Download
+----------------
+https://www.oracle.com/in/java/technologies/javase/javase8-archive-downloads.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

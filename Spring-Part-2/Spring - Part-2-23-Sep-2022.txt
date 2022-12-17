@@ -1,0 +1,76 @@
+Date:23/Sep/2022
+----------------
+Spring DAO Module
+-----------------
+DAO stands for Data Access Object which is a class/interface which contains
+set of methods used to operate a database
+
+	- Spring JDBC Module
+	- Spring ORM Module (Hibernate)
+	- Spring Data JPA Module
+
+Spring JDBC Module
+------------------
+Plain JDBC
+----------
+- handle the exceptions
+- load the driver class
+- establish connection
+- create statement
+- execute statement
+- close statement
+- close connection
+
+Spring JDBC
+-----------
+- execute statement
+
+JdbcTemplate class of Spring API is used for Spring JDBC
+
+Example Application
+-------------------
+- Create a table "Student" in MySQL
+	mysql>create table Student (id int(3), name varchar(10), age int(2));
+
+- Add the following dependencies in pom.xml file of SpringProj
+
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-jdbc</artifactId>
+    		<version>4.3.10.RELEASE</version>
+		</dependency>
+		<dependency>
+    		<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+    		<version>8.0.30</version>
+		</dependency>
+
+				REfer program pom.xml
+
+- Create an interface "StudentDAO" in com.spring package of src/main/java folder
+  of SpringProj
+		Refer program StudentDAO.java
+
+- Create a Spring bean class "StudentDAOImpl" in com.spring package
+		REfer program StudentDAOImpl.java
+
+- Create Spring bean XML configuration file "jdbc.xml" in src/main/java folder
+		Refer program jdbc.xml
+
+- Create a test class "JdbcTest" in com.spring package
+		Refer program JdbcTest.java (Run)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
